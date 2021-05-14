@@ -426,22 +426,24 @@ class _DashboardState extends State<Dashboard> {
 
   }
   Future getImage() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+    final picker = ImagePicker();
+    var image = await picker.getImage(source: ImageSource.gallery);
     //onSelect(mobile);
     if (image == null) {
       return;
     }
       print("Hello");
-    predictImage(image);
+    predictImage(File(image.path));
   }
 
   Future getCamera() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.camera);
+    final picker = ImagePicker();
+    var image = await picker.getImage(source: ImageSource.camera);
     if (image == null){
       print("Hello");
       return;
     }
-    predictImage(image);
+    predictImage(File(image.path));
   }
 
   Future predictImage(File image) async {
