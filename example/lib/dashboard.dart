@@ -567,11 +567,12 @@ class _DashboardState extends State<Dashboard> {
                     radius: 30,
                     child: ClipOval(
                         child: Image.asset(
-                          'assets/boy.jpeg',
+                          'assets/icon.png',
+                          // 'assets/boy.jpeg',
                           // Photo from https://unsplash.com/photos/QXevDflbl8A
                           fit: BoxFit.cover,
-                          width: 55.0,
-                          height: 55.0,
+                          width: 60.0,
+                          height: 60.0,
                         )),
                   ),
                 ],
