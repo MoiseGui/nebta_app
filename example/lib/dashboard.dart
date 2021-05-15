@@ -580,8 +580,8 @@ class _DashboardState extends State<Dashboard> {
             DiseaseList(),
             // SizedBox(height: 10),
             Padding(
-            padding: EdgeInsets.only(left: 25, top: 20),
-            child: Text("Check current condition of your area. "),
+            padding: EdgeInsets.only(left: 25, top: 15),
+            child: Text("Check current condition of your area. ", style: TextStyle(color: Colors.black, fontSize: 16),),
             ),
 
             Align(
