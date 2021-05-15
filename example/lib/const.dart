@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 class Constants{
 
-  static String appName = "Sensor Monitoring App";
+  static String appName = "NABTA";
 
   //Colors for theme
   static Color lightPrimary = Color(0xfffcfcff);

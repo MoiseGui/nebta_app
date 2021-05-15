@@ -150,42 +150,6 @@ class _DashboardState extends State<Dashboard> {
       showErrorProcessing(context);
     }
   }
-//
-//  Future<void> _optionsDialogBox() {
-//    var state=false;
-//    return showDialog(context: context,
-//        builder: (BuildContext context) {
-//          return AlertDialog(
-//            content: new SingleChildScrollView(
-//              child: new ListBody(
-//                children: <Widget>[
-//                  Padding(
-//                    padding: EdgeInsets.all(5.0),
-//                  ),
-//                  GestureDetector(
-//                    child: new Text('Take a picture'),
-//                    onTap: getCamera,
-//
-//                  ),
-//                  Padding(
-//                    padding: EdgeInsets.all(10.0),
-//                  ),
-//                  GestureDetector(
-//                    child: new Text('Select from gallery'),
-//                    onTap: getImage,
-//
-//                  ),
-//
-//                  Padding(
-//                    padding: EdgeInsets.all(5.0),
-//                  ),
-//                ],
-//              ),
-//            ),
-//
-//          );
-//        });
-//  }
 
   Uint8List imageToByteListFloat32(
       img.Image image, int inputSize, double mean, double std) {
@@ -562,13 +526,15 @@ class _DashboardState extends State<Dashboard> {
     showDialog(
         context: context, builder: (BuildContext context) => dialogWithImage);
   }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body:ListView(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(left: 25, right: 14, top: 30, bottom: 40),
+              padding: EdgeInsets.only(left: 25, right: 14, top: 30, bottom: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -612,10 +578,10 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
             DiseaseList(),
-            SizedBox(height: 10),
+            // SizedBox(height: 10),
             Padding(
             padding: EdgeInsets.only(left: 25, top: 20),
-            child: Text("Check current condition of your field. "),
+            child: Text("Check current condition of your area. "),
             ),
 
             Align(
@@ -627,7 +593,8 @@ class _DashboardState extends State<Dashboard> {
                   children: <Widget>[
                     Container(
                       margin: EdgeInsets.only(top: 10),
-                      height: MediaQuery.of(context).size.height*2,
+                      height: MediaQuery.of(context).size.height/1.83,
+                      // height: 410,
                       child: TabBarView(
                         children: <Widget>[
                           ScreenGeneration(),
