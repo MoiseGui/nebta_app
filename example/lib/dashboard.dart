@@ -264,7 +264,8 @@ class _DashboardState extends State<Dashboard> {
     );
     var labelForHighest="";
     double confidence=-1.00;
-      var imageBytes = (await rootBundle.load(image.path)).buffer;
+    print("AAAAAAAAAAAAAAAAAAA");
+    var imageBytes = (await rootBundle.load(image.path)).buffer;
     print(imageBytes);
     img.Image oriImage = img.decodeJpg(imageBytes.asUint8List());
     img.Image resizedImage = img.copyResize(oriImage,  width: 299, height: 299);
