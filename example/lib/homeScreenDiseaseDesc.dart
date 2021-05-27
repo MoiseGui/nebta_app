@@ -4,6 +4,8 @@ import 'DISEASES/AppleScab.dart';
 import 'DISEASES/CornCommonRust.dart';
 import 'DISEASES/GrapeBlackRot.dart';
 import 'DISEASES/PotatoEarlyBlight.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class DiseaseList extends StatelessWidget {
   @override
@@ -22,7 +24,7 @@ class DiseaseList extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => CornCommonRust()),
               );
             },
-            child: diseases('assets/10.jpg', 'Trending', 'Corn Common Rust'),
+            child: diseases('assets/10.jpg', AppLocalizations.of(context).trending, 'Corn Common Rust'),
             // Photo from https://unsplash.com/photos/wHUFmZRMpLc
           ),
           GestureDetector(
@@ -32,7 +34,7 @@ class DiseaseList extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => AppleScab()),
               );
             },
-            child: diseases('assets/2.jpg', 'Trending', 'Apple Scab'),
+            child: diseases('assets/2.jpg', AppLocalizations.of(context).trending, 'Apple Scab'),
             // Photo from https://unsplash.com/photos/2d4lAQAlbDA
           ),
           GestureDetector(
@@ -42,7 +44,7 @@ class DiseaseList extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => PotatoEarlyBlight()),
                 );
               },
-              child: diseases('assets/18.jpg', 'Trending', 'Potato Early Blight')
+              child: diseases('assets/18.jpg', AppLocalizations.of(context).trending, 'Potato Early Blight')
             // Photo from https://unsplash.com/photos/561igiTyvSk
           ),
           GestureDetector(
@@ -52,7 +54,7 @@ class DiseaseList extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => GrapeBlackRot()),
                 );
               },
-              child: diseases('assets/25.jpg', 'Trending', 'Grape Black Rot')
+              child: diseases('assets/25.jpg', AppLocalizations.of(context).trending, 'Grape Black Rot')
             // Photo from https://unsplash.com/photos/561igiTyvSk
           )
 

@@ -1,0 +1,38 @@
+{
+    "goodMorning": "Good morning",
+    "@goodMorning": {
+      "description": "The conventional newborn programmer greeting"
+    },
+  "goodAfternoon": "Good Afternoon",
+  "@goodAfternoon": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "goodEvening": "Good Evening",
+  "@goodEvening": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "user": "User!",
+  "@user": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "browseDisease": "Browse new recommended diseases.",
+  "@browseDisease": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "checkCondition": "Check current condition of your area.",
+  "@checkCondition": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "temperature": "Temperature",
+  "@temperature": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "humidity": "Humidity",
+  "@humidity": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "trending": "Trending",
+  "@trending": {
+    "description": "The conventional newborn programmer greeting"
+  }
+}

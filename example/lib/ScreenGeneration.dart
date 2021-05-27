@@ -5,7 +5,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'Cards.dart';
 import 'data.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ScreenGeneration extends StatefulWidget {
   @override
@@ -32,13 +32,13 @@ class _ScreenGenerationState extends State<ScreenGeneration> {
         var currentConditions = json.decode(response.body)['currentConditions'];
         print("Successfully fetched and parsed Sensor Data");
 
-        //Temperature
-        print("Data retrieved for Temperature : " + currentConditions["temp"].toString());
+        //AppLocalizations.of(context).temperature
+        print("Data retrieved for AppLocalizations.of(context).temperature : " + currentConditions["temp"].toString());
         var temp = currentConditions["temp"];
         if(temp.toInt() >= 18 && temp.toInt()<24){
           var str = {
-            'icon' : 'assets/temperature.png' ,
-            'name' : 'Temperature',
+            'icon' : 'assets/AppLocalizations.of(context).temperature.png' ,
+            'name' : AppLocalizations.of(context).temperature,
             'value' : '${temp.toInt()}°C',
             'subText' : 'Normal',
             'color' : '${normalTemp}',
@@ -48,7 +48,7 @@ class _ScreenGenerationState extends State<ScreenGeneration> {
         } else if(temp.toInt() >= 24 && temp.toInt()<=28){
           var str = {
             'icon' : 'assets/temperature.png' ,
-            'name' : 'Temperature',
+            'name' : AppLocalizations.of(context).temperature,
             'value' : '${temp.toInt()}°C',
             'subText' : 'Moderate',
             'color' : '${moderateTemp}',
@@ -58,7 +58,7 @@ class _ScreenGenerationState extends State<ScreenGeneration> {
         } else if(temp.toInt() > 28){
           var str = {
             'icon' : 'assets/temperature.png' ,
-            'name' : 'Temperature',
+            'name' : AppLocalizations.of(context).temperature,
             'value' : '${temp.toInt()}°C',
             'subText' : 'Critical',
             'color' : '${highTemp}',
@@ -75,7 +75,7 @@ class _ScreenGenerationState extends State<ScreenGeneration> {
         if(humidity.toInt() >= 50 && humidity.toInt()<71){
           var str = {
             'icon' : 'assets/humidity.png' ,
-            'name' : 'Humidity',
+            'name' : AppLocalizations.of(context).humidity,
             'value' : '${humidity.toInt()}',
             'subText' : 'Normal',
             'color' : '${lightBlueHumidity}',
@@ -85,7 +85,7 @@ class _ScreenGenerationState extends State<ScreenGeneration> {
         } else if(humidity.toInt() < 50){
           var str = {
             'icon' : 'assets/humidity.png' ,
-            'name' : 'Humidity',
+            'name' : AppLocalizations.of(context).humidity,
             'value' : '${humidity.toInt()}',
             'subText' : 'low',
             'color' : '${lightBlueHumidity}',
@@ -95,7 +95,7 @@ class _ScreenGenerationState extends State<ScreenGeneration> {
         } else if(humidity.toInt() > 70){
           var str = {
             'icon' : 'assets/humidity.png' ,
-            'name' : 'Humidity',
+            'name' : AppLocalizations.of(context).humidity,
             'value' : '${humidity.toInt()}',
             'subText' : 'High',
             'color' : '${lightBlueHumidity}',

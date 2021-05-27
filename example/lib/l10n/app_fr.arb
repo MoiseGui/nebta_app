@@ -1,0 +1,11 @@
+{
+  "goodMorning": "Bonjour",
+  "goodAfternoon": "Bonne aprèm",
+  "goodEvening": "Bonsoir",
+  "user": "Utilisateur!",
+  "browseDisease": "Nouvelles maladies recommandées.",
+  "checkCondition": "Vérifiez l'état actuel de votre région.",
+  "temperature": "Température",
+  "humidity": "Humidité",
+  "trending": "Tendance"
+}

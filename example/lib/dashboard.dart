@@ -21,7 +21,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:flutter/services.dart';
 import 'package:progress_dialog/progress_dialog.dart';
 import 'package:image/image.dart' as img;
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 const String mobile = "MobileNet";
 
 
@@ -454,12 +454,12 @@ class _DashboardState extends State<Dashboard> {
   String greeting() {
     var hour = DateTime.now().hour;
     if (hour < 12) {
-      return 'Good Morning';
+      return AppLocalizations.of(context).goodMorning;
     }
     if (hour < 17) {
-      return 'Good Afternoon';
+      return AppLocalizations.of(context).goodAfternoon;
     }
-    return 'Good Evening';
+    return AppLocalizations.of(context).goodEvening;
   }
   void showErrorProcessing(BuildContext context) {
     Dialog dialogWithImage = Dialog(
@@ -550,7 +550,7 @@ class _DashboardState extends State<Dashboard> {
                                 style:
                                 TextStyle(color: Colors.black, fontSize: 20)),
                             TextSpan(
-                                text: ' User!',
+                                text: " "+AppLocalizations.of(context).user,
                                 style: TextStyle(
                                     fontFamily: 'ConcertOne-Regular',
                                     color: Colors.black,
@@ -560,22 +560,27 @@ class _DashboardState extends State<Dashboard> {
                         ),
                       ),
                       SizedBox(height: 10),
-                      Text('Browse new recommended diseases.'),
+
+                      Text(AppLocalizations.of(context).browseDisease),
                     ],
                   ),
-                  CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 30,
-                    child: ClipOval(
-                        child: Image.asset(
-                          'assets/icon.png',
-                          // 'assets/boy.jpeg',
-                          // Photo from https://unsplash.com/photos/QXevDflbl8A
-                          fit: BoxFit.cover,
-                          width: 60.0,
-                          height: 60.0,
-                        )),
-                  ),
+      ButtonTheme(
+        minWidth: 30.0,
+        height: 30.0,
+        child: RaisedButton(
+          textColor: Colors.white,
+          color: Colors.green,
+          child: Text(AppLocalizations.of(context).localeName),
+          onPressed: () {
+            print("hello there this is appLocalisation");
+            print(AppLocalizations.of(context).localeName);
+          },
+          shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(30.0),
+          ),
+        ),
+      )
+
                 ],
               ),
             ),
@@ -583,7 +588,7 @@ class _DashboardState extends State<Dashboard> {
             // SizedBox(height: 10),
             Padding(
             padding: EdgeInsets.only(left: 25, top: 15),
-            child: Text("Check current condition of your area. ", style: TextStyle(color: Colors.black, fontSize: 16),),
+            child: Text(AppLocalizations.of(context).checkCondition, style: TextStyle(color: Colors.black, fontSize: 16),),
             ),
 
             Align(
