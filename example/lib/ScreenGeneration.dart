@@ -37,7 +37,7 @@ class _ScreenGenerationState extends State<ScreenGeneration> {
         var temp = currentConditions["temp"];
         if(temp.toInt() >= 18 && temp.toInt()<24){
           var str = {
-            'icon' : 'assets/AppLocalizations.of(context).temperature.png' ,
+            'icon' : 'assets/temperature.png',
             'name' : AppLocalizations.of(context).temperature,
             'value' : '${temp.toInt()}°C',
             'subText' : 'Normal',

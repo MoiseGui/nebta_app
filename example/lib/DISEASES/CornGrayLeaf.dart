@@ -117,7 +117,7 @@ class _CornGrayLeafState extends State<CornGrayLeaf> {
             ),
             Padding(
               padding: EdgeInsets.only(top: 20, bottom: 20, left: 14, right: 14),
-              child: Image.asset('assets/CornGreyDiseaseCycle.png'),
+                child: Image.asset('assets/CornGreyDiseaseCycle.png'),
 
             ),
             Padding(

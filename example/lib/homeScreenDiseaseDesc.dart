@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/DISEASES/deseaseDetails.dart';
 
 import 'DISEASES/AppleScab.dart';
 import 'DISEASES/CornCommonRust.dart';
@@ -21,7 +22,7 @@ class DiseaseList extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => CornCommonRust()),
+                MaterialPageRoute(builder: (context) => DeseaseDetail(title: "Corn Common Rust",)),
               );
             },
             child: diseases('assets/10.jpg', AppLocalizations.of(context).trending, 'Corn Common Rust'),
@@ -41,7 +42,7 @@ class DiseaseList extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PotatoEarlyBlight()),
+                  MaterialPageRoute(builder: (context) => DeseaseDetail(title: "Potato Early Blight",)),
                 );
               },
               child: diseases('assets/18.jpg', AppLocalizations.of(context).trending, 'Potato Early Blight')
