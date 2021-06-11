@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/DISEASES/PotatoLateBlight.dart';
+import 'package:project_app/DISEASES/TomatoEarlyBlight.dart';
+import 'package:project_app/DISEASES/TomatoLateBlight.dart';
 import 'package:project_app/DISEASES/deseaseDetails.dart';
 
 import 'DISEASES/AppleScab.dart';
@@ -19,45 +22,49 @@ class DiseaseList extends StatelessWidget {
         padding: EdgeInsets.all(10.0),
         children: <Widget>[
           GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => DeseaseDetail(title: "Corn Common Rust",)),
-              );
-            },
-            child: diseases('assets/10.jpg', AppLocalizations.of(context).trending, 'Corn Common Rust'),
-            // Photo from https://unsplash.com/photos/wHUFmZRMpLc
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AppleScab()),
-              );
-            },
-            child: diseases('assets/2.jpg', AppLocalizations.of(context).trending, 'Apple Scab'),
-            // Photo from https://unsplash.com/photos/2d4lAQAlbDA
-          ),
-          GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => DeseaseDetail(title: "Potato Early Blight",)),
                 );
               },
-              child: diseases('assets/18.jpg', AppLocalizations.of(context).trending, 'Potato Early Blight')
+              child: diseases('assets/16.jpg', AppLocalizations.of(context).trending, 'Potato Early Blight')
             // Photo from https://unsplash.com/photos/561igiTyvSk
           ),
           GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => GrapeBlackRot()),
+                  // MaterialPageRoute(builder: (context) => PotatoLateBlight()),
+                  MaterialPageRoute(builder: (context) => DeseaseDetail(title: "Potato Late Blight",)),
                 );
               },
-              child: diseases('assets/25.jpg', AppLocalizations.of(context).trending, 'Grape Black Rot')
+              child: diseases('assets/21.jpg', AppLocalizations.of(context).trending, 'Potato Late Blight')
             // Photo from https://unsplash.com/photos/561igiTyvSk
-          )
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                // MaterialPageRoute(builder: (context) => TomatoEarlyBlight()),
+                MaterialPageRoute(builder: (context) => DeseaseDetail(title: "Tomato Early Blight",)),
+              );
+            },
+            child: diseases('assets/33.jpg', AppLocalizations.of(context).trending, 'Tomato Early Blight'),
+            // Photo from https://unsplash.com/photos/wHUFmZRMpLc
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                // MaterialPageRoute(builder: (context) => TomatoLateBlight()),
+                MaterialPageRoute(builder: (context) => DeseaseDetail(title: "Tomato Late Blight",)),
+              );
+            },
+            child: diseases('assets/34.jpg', AppLocalizations.of(context).trending, 'Tomato Late Blight'),
+            // Photo from https://unsplash.com/photos/2d4lAQAlbDA
+          ),
+
 
 
 

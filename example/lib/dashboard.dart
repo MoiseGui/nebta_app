@@ -11,6 +11,7 @@ import 'package:project_app/DISEASES/PotatoEarlyBlight.dart';
 import 'package:project_app/DISEASES/PotatoLateBlight.dart';
 import 'package:project_app/DISEASES/TomatoEarlyBlight.dart';
 import 'package:project_app/DISEASES/TomatoLateBlight.dart';
+import 'package:project_app/DISEASES/deseaseDetails.dart';
 import 'package:tflite/tflite.dart';
 import 'package:flutter/material.dart';
 import 'DISEASES/CornGrayLeaf.dart';
@@ -111,14 +112,16 @@ class _DashboardState extends State<Dashboard> {
         context,
         MaterialPageRoute(
 
-            builder: (context) => PotatoEarlyBlight()),
+            // builder: (context) => PotatoEarlyBlight()),
+            builder: (context) => DeseaseDetail(title: name,)),
       );
     }else if(name == "Potato Late Blight"){
       Navigator.push(
         context,
         MaterialPageRoute(
 
-            builder: (context) => PotatoLateBlight()),
+            // builder: (context) => PotatoLateBlight()),
+            builder: (context) => DeseaseDetail(title: name,)),
       );
     }else if(name == "Tomato Bacterial Spot"){
       showErrorProcessing(context);
@@ -127,14 +130,16 @@ class _DashboardState extends State<Dashboard> {
         context,
         MaterialPageRoute(
 
-            builder: (context) => TomatoEarlyBlight()),
+            // builder: (context) => TomatoEarlyBlight()),
+            builder: (context) => DeseaseDetail(title: name,)),
       );
     }else if(name == "Tomato Late Blight"){
       Navigator.push(
         context,
         MaterialPageRoute(
 
-            builder: (context) => TomatoLateBlight()),
+            // builder: (context) => TomatoLateBlight()),
+            builder: (context) => DeseaseDetail(title: name,)),
       );
     }else if(name == "Tomato Leaf Mold"){
       showErrorProcessing(context);
@@ -244,6 +249,20 @@ class _DashboardState extends State<Dashboard> {
         context: context, builder: (BuildContext context) => dialogWithImage);
   }
 
+  Future<Uint8List> _readFileByte(String filePath) async {
+    Uri myUri = Uri.parse(filePath);
+    File image = new File.fromUri(myUri);
+    Uint8List bytes;
+    await image.readAsBytes().then((value) {
+      bytes = Uint8List.fromList(value);
+      print('reading of bytes is completed');
+    }).catchError((onError) {
+      print('Exception Error while reading audio from path:' +
+          onError.toString());
+    });
+    return bytes;
+  }
+
   Future recognizeImage(File image) async {
     print("DEBUG: Inside Recognize Image Function");
     try{
@@ -265,9 +284,12 @@ class _DashboardState extends State<Dashboard> {
     var labelForHighest="";
     double confidence=-1.00;
     print("AAAAAAAAAAAAAAAAAAA");
-    var imageBytes = (await rootBundle.load(image.path)).buffer;
-    print(imageBytes);
-    img.Image oriImage = img.decodeJpg(imageBytes.asUint8List());
+    // var imageBytes = (await rootBundle.load(image.path)).buffer;
+    // var imageBytes = (await DefaultAssetBundle.of(context).load(image.path)).buffer;
+    var imageBytes =  await _readFileByte(image.path);
+    //print(imageBytes);
+    // img.Image oriImage = img.decodeJpg(imageBytes.asUint8List());
+    img.Image oriImage = img.decodeJpg(imageBytes);
     img.Image resizedImage = img.copyResize(oriImage,  width: 299, height: 299);
     var recognitions = await Tflite.runModelOnBinary(
       binary: imageToByteListFloat32(resizedImage,299, 0, 255.0),
@@ -395,9 +417,9 @@ class _DashboardState extends State<Dashboard> {
     var image = await picker.getImage(source: ImageSource.gallery);
     //onSelect(mobile);
     if (image == null) {
+      print("Hello");
       return;
     }
-      print("Hello");
     predictImage(File(image.path));
   }
 
